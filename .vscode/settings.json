@@ -1,0 +1,28 @@
+{
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/myarticle.md"
+            ],
+            "config": {
+                "audience": "expert",
+                "dialect": "american",
+                "domain": "technical",
+                "emotions": [
+                    "confident",
+                    "optimistic",
+                    "respectful",
+                    "urgent",
+                    "friendly",
+                    "analytical"
+                ],
+                "goals": [
+                    "inform",
+                    "describe",
+                    "convince",
+                    "tellStory"
+                ]
+            }
+        }
+    ]
+}
