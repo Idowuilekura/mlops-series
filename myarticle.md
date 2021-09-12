@@ -1,55 +1,64 @@
 ## Introduction 
-Machine Learning is the process of training machines to become intelligent and solve tasks with minimal supervision. You might be amazed at how YouTube intelligently recommends videos for you or how Spotify magically suggests new songs to you. What powers the intelligent recommendation or magically suggested songs is simply machine learning.  Humans learned how to walk by observing how others walked and trited to replicate the process. Similarly, machines learn how to perform tasks by iteratively observing the patterns in a given dataset. After which a mathematical function is formed, the mathematical function can be used to make predictions on new datasets. 
+Machine Learning is the process of training machines to become intelligent and solve tasks with minimal supervision. You might be amazed at how YouTube intelligently recommends videos for you or how Spotify magically suggests new songs to you. What powers the intelligent recommendation or magically suggested songs is simply machine learning. Humans learned how to walk by observing how others walked and tried to replicate the process. Similarly, machines learn to perform tasks by iteratively following the patterns in a given dataset and then forming a mathematical function. Data scientists can use the mathematical function to make predictions on new datasets. As shown in the image below,  training datasets are fed into the machine learning model. The model learns the patterns and develops a mathematical function (h). The mathematical function is then applied to a new dataset to make predictions. You can read this [article](https://www.analyticsvidhya.com/machine-learning/) to gain a better understanding of machine learning.
+<figure>
+<img src="https://user-images.githubusercontent.com/38056084/132355664-318bf4a5-81f2-40ef-b18f-4cf9cf5a6122.png",alt="Model training image" width="600" height="500">
+<figcaption>Fig.1 How machine learning works <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmachinelearningmedium.com%2F2017%2F08%2F10%2Fmodel-representation-and-hypothesis%2F&psig=AOvVaw2-DcUOC1eomtACOEfe_cUb&ust=1631108564271000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPiwkIP_7PICFQAAAAAdAAAAABAI">source</a></figcaption>
+</figure>
+<!-- ![image](https://user-images.githubusercontent.com/38056084/132355664-318bf4a5-81f2-40ef-b18f-4cf9cf5a6122.png) -->
+ 
+ The Youtube recommendation model was built and then deployed on Youtube for users to enjoy. Imagine if Google built the recommendation model without deploying it on Youtube? That would be awkward, and we wouldn't be able to enjoy Youtube recommendations as it it today. Unfortunately, most data scientists are comfortable with just building models without deploying them to production for end-users to enjoy. Machine Learning Operations (MLOps) is simply the process of shipping your machine learning models to production (this is just a basic definition). According to Wikipedia MLOps is  
+> MLOps is a set of practices that aims to deploy and maintain machine learning models in production reliably and efficiently.
 
-![image](https://user-images.githubusercontent.com/38056084/132355664-318bf4a5-81f2-40ef-b18f-4cf9cf5a6122.png)
+As shown in the image below, MLOps is an iterative method, that encompasses the:
 
-*how machine learning works* [sorce](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmachinelearningmedium.com%2F2017%2F08%2F10%2Fmodel-representation-and-hypothesis%2F&psig=AOvVaw2-DcUOC1eomtACOEfe_cUb&ust=1631108564271000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPiwkIP_7PICFQAAAAAdAAAAABAI)
+  - Design Phase
+  - Model Development Phase
+  - Operations Phase
 
-In the image above, the machine learning model is fed with training datasets. The model learns the patterns and develops a mathematical function (*h*), the mathematical function is then applied to a new dataset to make predictions. You can read this [article](https://www.analyticsvidhya.com/machine-learning/) to gain a better understanding of machine learning. 
-
-Youtube recommendation model, was built and then deployed on Youtube for users to enjoy. Imagine if the recommendation model was built without deploying on Youtube? That is awkward right? Unfortunately, most data scientists are comfortable with just building models without deploying them to production for end-users to enjoy. Machine Learning Operation (MLOps) is simply the process of shipping your machine learning models to production (this is just a basic definition). According to Wikipedia MLOps is  
-> is a set of practices that aims to deploy and maintain machine learning models in production reliably and efficiently.
-
-MLOps is an iterative method, that encompasses model training, testing the model, deploying the model in a production environment, and testing the model in the production environment. 
 ![image](https://user-images.githubusercontent.com/38056084/132360717-0fed95b8-e37b-4795-b298-f7c9d6b21af5.png)
-MLOps [source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fml-ops.org%2Fcontent%2Fmlops-principles&psig=AOvVaw1SVPdhuwUk_caQVpTfQJNm&ust=1631110733104000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKC-uo2H7fICFQAAAAAdAAAAABAD)
+Fig.2 MLOps Phases [source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fml-ops.org%2Fcontent%2Fmlops-principles&psig=AOvVaw1SVPdhuwUk_caQVpTfQJNm&ust=1631110733104000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKC-uo2H7fICFQAAAAAdAAAAABAD)
 
-From the image above, you can see that MLOps encompasses three stages which are Design, Model Development, and Operations. 
 
-Under the Design Phase we have other sub-phases, which are
 
-**Requirements Engineering**
+
+## **Design Phase** 
+Under the Design Phase we have other sub-phases, which are:
+1. Requirement Engineering 
+2. ML Use-Cases and Prioritization
+3. Data Availability Check 
+### **Requirements Engineering**
 
  According to Javatpoint 
  > Requirements Engineering (RE) refers to the process of defining, documenting, and maintaining requirements in the engineering design process. 
  
- Requirement engineering helps an individual/ company to understand the desires of the customers, understanding the needs of customers through analysis, assessing the feasibility of a solution/product, settle for a better solution, clearly frame the solution, validating the specifications, managing any requirements before transforming it into a working system. 
+ Requirement engineering helps an individual/ company understand the desires of the customers. It involves understanding the customers' needs through analysis, assessing the feasibility of a solution/product, settling for a better solution, clearly framing the solution, validating the specifications, managing any requirements before transforming it into a working system. 
  
  ![image](https://user-images.githubusercontent.com/38056084/132573929-5e729bd6-d3ec-46d0-846d-e686830ca741.png)
- Requirement Engineering Process [source](https://www.javatpoint.com/software-engineering-requirement-engineering)
 
-The first step in any Datascience/ Machine learning lifecycle is requirement engineering. This phase is where you understand what your customers needs for instance Spotify was able to build a recommendation model because this is what most customers need. You can read more about requirements engineering [here](https://www.javatpoint.com/software-engineering-requirement-engineering) 
+ Fig.3 Requirement Engineering Process [source](https://www.javatpoint.com/software-engineering-requirement-engineering)
 
- **ML Use Cases and Prioritization**
+The first step in any Data Science/ Machine learning lifecycle is requirement engineering. This phase is where you understand your customers' needs. For instance, Spotify was able to build a recommendation model because this is what most customers need. You can read more about requirements engineering [here](https://www.javatpoint.com/software-engineering-requirement-engineering) 
 
- This phase is where Machine Learning practitioners prioritize the impact of any proposed machine learning solution on their business. This phase is concerned with analyzing the importance of a proposed machine learning solution towards their goals. The truth is some proposed machine learning solutions aren't profitable to an organization, this phase is where those solutions are dropped. You can read this [article](https://www.linkedin.com/pulse/identifying-prioritizing-artificial-intelligence-use-cases-srivatsan/) from Srivatsan Srinivasan, a Google Developer Expert, the article will give you more understanding on how to priotize Machine Learning Use Cases. 
+ ### **ML Use Cases and Prioritization**
+This phase is where Machine Learning practitioners prioritize the impact of any proposed machine learning solution on their business. This phase is concerned with analyzing the importance of a proposed machine learning solution towards their goals. The truth is some proposed machine learning solutions aren't profitable to an organization. In this phase, companies drop those solutions.
+You can read this [article](https://www.linkedin.com/pulse/identifying-prioritizing-artificial-intelligence-use-cases-srivatsan/) from Srivatsan Srinivasan,a Google Developer Expert; the report will give you more understanding of prioritizing Machine Learning Use Cases.
 
- **Data Availability Check**
+### **Data Availability Check**
 
 This phase deals with the process of checking if the data that will be used to train the model is available. It's obvious that you can't train any machine learning model without data. 
 
-**Model Development Phase**
+## **Model Development Phase**
 
 The model development phase deals with training the model with the data, performing feature engineering, testing the performance of the model using different metrics like accuracy, precision, recall e.t.c
 
 
-**Operations**
+## **Operations Phase**
 
 This phase deals with deploying the model to production, monitoring the performance of the model in the production environment. You can either deploy the model using a continuous integration/continuous development (CI/CD) pipeline or without. 
 
 The focus of the articles in this series is on building the model and deploying the model with Docker and Google Cloud Platform. 
 
-Machine Learning models are built to solve problems, hence before building any machine learning model, a problem statement needs to be defined.
+Machine Learning models are built to solve problems,hence before building any machine learning model, a problem statement needs to be defined.
 
 ## Problem Statement
 You just resumed, as a datascientist at moowale, moowale is a real estate company that lists houses for sale. You have been tasked with the responsibility of building a machine learning model that can be used to predict the price of any building based on some given parameters. The model will be deployed to make it easy for customers to get predicted prices based on information that they input into moowale website.
@@ -58,7 +67,18 @@ You just resumed, as a datascientist at moowale, moowale is a real estate compan
 
 
 ## Data Gathering
-Now that you have a well defined problem ststement the next phase is to gather the data that will be used to train the model. This is the stage in which datascientist communicate with data engineers for dataset. The house price prediction dataset from kaggle will be used for building the model, the dataset can be downloaded from [here](https://www.kaggle.com/c/neolen-house-price-prediction/data). You will need a kaggle account after which you can accept the competition rules and download the dataset. The dataset will be used to train the model. 
+Now that you have a well defined problem sta- [Introduction](#introduction)
+- [Introduction](#introduction)
+- [**Design Phase**](#design-phase)
+  - [**Requirements Engineering**](#requirements-engineering)
+  - [**ML Use Cases and Prioritization**](#ml-use-cases-and-prioritization)
+  - [**Data Availability Check**](#data-availability-check)
+- [**Model Development Phase**](#model-development-phase)
+- [**Operations Phase**](#operations-phase)
+- [Problem Statement](#problem-statement)
+- [Data Gathering](#data-gathering)
+- [Model Building](#model-building)
+- [Conclusion](#conclusion)
 
 
 ## Model Building
