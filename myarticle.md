@@ -10,13 +10,13 @@
       - [**Model Testing and Validation**](#model-testing-and-validation)
     - [**Operations Phase**](#operations-phase)
       - [**ML Model Deployment**](#ml-model-deployment)
-      - [CI/CD Pipeline](#cicd-pipeline)
+      - [**CI/CD Pipeline**](#cicd-pipeline)
       - [**Monitoring and Triggering**](#monitoring-and-triggering)
-  - [**Article Focus**](#article-focus)
+  - [**Articles Focus**](#articles-focus)
     - [**Problem Statement**](#problem-statement)
     - [**Data Gathering/Data Engineering**](#data-gatheringdata-engineering)
     - [**Model Building**](#model-building)
-    - [Model Evaluation](#model-evaluation)
+    - [**Model Evaluation**](#model-evaluation)
   - [**Conclusion**](#conclusion)
 
 ## **Introduction**
@@ -97,7 +97,7 @@ Under the operations phase, we have these sub-phases;
 ##### **ML Model Deployment**
 This phase deals with deploying the model to production; the production environment can be a website, mobile phones, or edge computing devices like embedded systems.
 
-##### CI/CD Pipeline
+##### **CI/CD Pipeline**
 CI/CD means Continous Integration and Continous Deployment. CI/CD is a set of practices that enables developers to change codes and deliver the code to production frequently and safely. CI/CD helps data scientists/ machine learning engineers continuously make changes to their model training, testing the newly trained model and deploying it frequently and safely. You can read this [article](https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html) to learn more about CI/CD  
 
 ##### **Monitoring and Triggering**
@@ -106,7 +106,7 @@ This phase involves monitoring the model's performance in the production environ
 If the model performance falls below a certain threshold, then the model needs to be retrained and redeployed; the model retraining is done by triggering the CI/CD pipeline. 
 
 
-### **Article Focus**
+### **Articles Focus**
 The focus of the articles in this series is on building a machine learning model and deploying the model with Docker and Google Cloud Platform.
 
 Machine Learning models are built to solve problems; hence, a problem statement needs to be defined before building any machine learning model.
@@ -123,7 +123,7 @@ Now that you have a well-defined problem statement, the next stage is to gather 
 
 #### **Model Building**
 
-IIt's time to build our model, but we will need to explore the dataset (exploratory data analysis). To follow along, you will need to have an Integrated Development Environment like Jupyter Notebook/Lab (which most data scientists use). You can learn more about Jupyter Notebooks with this [link](https://www.youtube.com/watch?v=HW29067qVWk).
+It's time to build our model, but we will need to explore the dataset (exploratory data analysis). To follow along, you will need to have an Integrated Development Environment like Jupyter Notebook/Lab (which most data scientists use). You can learn more about Jupyter Notebooks with this [link](https://www.youtube.com/watch?v=HW29067qVWk).
 Now that you have Jupyter Notebook, you can open it and follow along.
 To explore the dataset, we will be using some python libraries, which we will import.
 
@@ -190,7 +190,7 @@ data_new.info()
 
 <figure>
 <img src="https://user-images.githubusercontent.com/38056084/132673332-ea688182-a712-45e9-b0c3-3cea297d6e34.png", alt =">
-There are no more missing values, the next phases in model building.
+There are no more missing values, the next phases in model building.</figure>
 
 Looking closely at the `data_new.info()` result, you will notice that we have two columns with object datatype.
 Machine Learning models expect all columns to be in numerical format, hence converting the columns to numerical. LabelEncoder is widely used to convert categorical columns to numerical columns; you can read more about LabelEncoder [here](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
@@ -241,7 +241,7 @@ lr = LinearRegression()
 # training the model
 lr.fit(X_train,y_train)
 ```
-#### Model Evaluation
+#### **Model Evaluation**
 Recall that after building your model, you need to evaluate the performance of the model. Several metrics can be used to evaluate machine learning models; for regression models, metrics include mean squared error, mean absolute error, root mean squared error e.t.c. Root Mean Squared Error metric will be used to evaluate the model.
 
 ```py
@@ -254,10 +254,10 @@ np.sqrt(mean_squared_error(lr.predict(X_test),y_test))
 
 The Root Mean Squared Error is quite large; machine learning engineers/ data scientists tries to reduce the error by trying other models and applying feature engineering. I won't be diving into that; the article's aim is not to minimize the error.
 
-Now that we have our model, to use the model in production, you will need to save the model, the two label encoder that was initialized earlier.
+Now that we have our model, to use the model in production, you will need to save the model and the two label encoder that was initialized earlier.
 
 ```py
-# joblib is ued to save object for later use
+# joblib is for saving objects for later use
 import joblib
 joblib.dump(lr,'lr_model')
 
